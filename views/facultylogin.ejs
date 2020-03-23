@@ -1,0 +1,23 @@
+<%- include("partials/header") -%>
+<div class="container">
+<div class="row login-outer">
+<div class="col-sm-5 login centered">
+  <h1 style="color:black">Login</h1>
+  <form action="/login" method="POST">
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="email" class="form-control" name="username" placeholder="Email">
+    </div>
+    <div class="form-group">
+      <label for="password">Password</label>
+      <input type="password" class="form-control" name="password" placeholder="password">
+    </div>
+    <button type="submit" class="btn btn-lg login_btn">Login</button>
+  </form>
+  <br>
+</div>
+<div class="col-sm-5 login-intro">
+  <p class="login-para">project approval system is a system by which you can see every student project easily...</p>
+</div>
+</div>
+</div>

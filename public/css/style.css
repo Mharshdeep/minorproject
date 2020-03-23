@@ -1,0 +1,97 @@
+body{
+background-image: url(/images/home_background.jpeg);
+background-size: cover;
+}
+
+.buttons{
+  background-color: #4CAF50;
+  color: white;
+  margin-right: 1.5em;
+  margin-left: 1.5em;
+  box-shadow: 0 0.4em #999;
+  border-radius: 0.5em;
+}
+.buttons:hover{
+    background-color: #3e8e41;
+}
+.buttons:active{
+  background-color: #3e8e41;
+  box-shadow: 0 0.3em #666;
+  transform: translateY(0.2em);
+}
+
+
+
+.footer{
+  background-color: #8CD7DF;
+  padding-bottom: 0.2em;
+  padding-top: 0.2em;
+  text-align : center;
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+}
+
+.front{
+  display: inline-block;
+}
+
+.front_outer{
+  text-align: center;
+  margin-top: 10%;
+  padding :0.1em;
+}
+.frontstatment{
+  color: #5F5C56;
+  text-align: center;
+  padding: 0px 0px 3% 0px;
+  font-family: sans-serif;
+  font-weight:bolder;
+  font-size: 5em;
+}
+
+.login{
+  background-color: #E3EBEC;
+  opacity: 0.8;
+  border-radius: 0.5em;
+}
+.login-outer{
+  margin-top: 2em;
+}
+.login-intro{
+  margin-left: 0.5em;
+  text-align: center;
+  padding-top: 4em;
+  color: inherit;
+  background-color: #E3EBEC;
+  opacity: 0.7;
+  border-radius: 0.5em;
+}
+.login-intro:hover{
+  opacity: 1;
+}
+
+.login-para{
+  font-weight: bold;
+  font-style: normal;
+  font-size: 2em;
+}
+.login_btn{
+  background-color: #86D11A;
+}
+.login_btn:hover{
+  background-color: #74BC0D;
+}
+.login_btn_2{
+  background-color: #CECFC5;
+}
+.navigation{
+background-color: #8CD7DF;
+min-height: 15%;
+padding-top: 15px;
+}
+.register{
+  text-decoration: underline;
+}
+
+/*background-image: linear-gradient(to right, red , yellow);*/
