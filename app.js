@@ -59,7 +59,7 @@ const studentData = new mongoose.Schema({
   gname: String,
   updates: {
     type: Array,
-    default: ["no"]
+    default: []
   }
 
 });
@@ -118,9 +118,10 @@ Student.findOne({
   email: req.user.username
 },function(err,result) {
 if (result){
-  res.render("student-home",{name: req.user.name,count : req.user.count,title: result.project_title ,updates: result.updates,updaestate: "pending"})
+  console.log(result.project_title);
+  res.render("student-home",{name: req.user.name,count : req.user.count,title: result.project_title ,updates: result.updates,updaestate: "pending",type: "/"+req.user.type+"-home"})
 }else{
-res.render("stuent-home",{name: req.user.name,count: req.user.count});
+res.render("student-home",{name: req.user.name,count: req.user.count,type: "/"+req.user.type+"-home"});
 }
 });
 }
@@ -130,7 +131,7 @@ else {
 });
 
 app.post("/fill-form",function(req,res) {
-res.render("project-form",{name: "harshdeep singh"})
+res.render("project-form",{name: "harshdeep singh",type: "/"+req.user.type+"-home"})
 });
 
 app.get("/show-form",function(req,res) {
@@ -141,34 +142,42 @@ app.get("/show-form",function(req,res) {
     },function(err,result) {
     if (result){
       res.render("show-form",{name: req.user.name,ptitle: result.project_title,gname: result.gname,gleader: result.gleader,gguide: "akankksha",
-      desc: result.project_description,m1: result.mem1,eno1: result.enr1,m2: result.mem2,eno2: result.enr2,m3: result.mem3,eno3: result.enr3,m4: result.mem4,eno4: result.enr4,updates: result.updates})
+      desc: result.project_description,m1: result.mem1,eno1: result.enr1,m2: result.mem2,eno2: result.enr2,m3: result.mem3,eno3: result.enr3,m4: result.mem4,eno4: result.enr4,updates: result.updates,type: "/"+req.user.type+"-home"});
     }else{
     console.log("error");
     }
     });
-  }else{
-    Student.find({gguide: req.user.name},function(err,result) {
-if (result) {
-  res.render("faculty-home",{name: req.user.name,students: result});
+  }
 }
+else{
+  res.redirect("/")
+}
+}
+);
+
+app.get("/detail/:stid",function(req,res) {
+const requestedId = req.params.stid;
+Student.findOne({
+  _id: requestedId
+},function(err,result) {
+  if(result){
+    res.render("show-form-faculty",{name: req.user.name,ptitle: result.project_title,gname: result.gname,gleader: result.gleader,gguide: "akankksha",
+    desc: result.project_description,m1: result.mem1,eno1: result.enr1,m2: result.mem2,eno2: result.enr2,m3: result.mem3,eno3: result.enr3,m4: result.mem4,eno4: result.enr4,updates: result.updates
+  ,type: "/"+req.user.type+"-home"})
   }
-  }else{
-    res.redirect("/student-login");
-  }
-})
+
+});
+});
 
 app.get("/faculty-home", function(req, res) {
   if (req.isAuthenticated("local") && req.user.type=="faculty") {
-    req.user.name = "Vidit Choudhary";
-    req.user.save();
-    Student.find({gguide: req.user.name},function(err,result) {
-if (result) {
-  console.log(result);
-  res.render("faculty-home",{name: req.user.name,students: result});
+    Student.find({gguide: req.user.name
+  },function(err,result) {
+if (result && result.length != 0) {
+  res.render("faculty-home",{name: req.user.name,count: req.user.count,group: result,type: "/"+req.user.type+"-home"});
 }else{
-  console.log("passed");
+  res.render("faculty-home",{name: result.name,count : req.user.count,type:"/"+result.type+"-home"});
 }
-
     });
   } else {
     res.redirect("/faculty-login");
@@ -187,7 +196,7 @@ app.post("/register", function(req, res) {
       res.redirect("/register");
     } else {
       passport.authenticate("local")(req, res, function() {
-        res.render("student-home",{name: User.name,count: User.count});
+        res.render("student-home",{name: User.name,count: User.count,type: "/"+req.user.type+"-home"});
       });
     }
   });
@@ -214,9 +223,9 @@ app.post("/student-login", function(req, res) {
                           email: result.username
                         },function(err,Result) {
                         if (Result){
-                          res.render("student-home",{name: result.name,count : result.count,title: Result.project_title,updates: Result.updates,updaestate: "pending"})
+                          res.render("student-home",{name: result.name,count : result.count,title: Result.project_title,updates: Result.updates,updaestate: "pending",type: "/"+req.user.type+"-home"})
                         }else{
-                          console.log("not done yet");
+                          res.render("student-home",{name: result.name,count: result.count,type: "/"+req.user.type+"-home"})
                         }
                         });
 
@@ -258,7 +267,22 @@ student.save();
 req.user.count = "1";
 req.user.save();
 
-
+Student.findOne({
+  gguide: req.body.gguide
+},function(err,result) {
+if (result) {
+  User.findOne({
+    name: req.body.gguide
+  },function(err,Result) {
+if (Result) {
+Result.count = "1";
+Result.save();
+}
+});
+}else{
+  console.log("not found guide");
+}
+});
 res.redirect("/student-home");
 });
 
@@ -293,8 +317,15 @@ app.post("/faculty-login", function(req, res) {
                       res.send("wrong password");
                     } else {
                       passport.authenticate('local')(req, res, function() {
-
-res.render("faculty-home",{name: result.name});
+                        Student.find({gguide: result.name
+                      },function(err,Result) {
+                    if (Result && Result.length != 0) {
+                      console.log(Result);
+                      res.render("faculty-home",{name: result.name,count: result.count,group: Result,type: "/"+result.type+"-home"});
+                    }else{
+                      res.render("faculty-home",{name: result.name,count : result.count,group: Result,type:"/"+result.type+"-home"});
+                    }
+                        });
                         })
                       }
                     })
