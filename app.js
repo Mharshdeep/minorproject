@@ -336,8 +336,8 @@ app.post("/faculty-login", function(req, res) {
                 })
               })
 
+              const port = process.env.PORT || 3000;
 
-
-                    app.listen(3000, function() {
+                    app.listen(port, function() {
                       console.log("server started on port 3000");
                     })
