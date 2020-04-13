@@ -26,7 +26,7 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
-mongoose.connect("mongodb://localhost:27017/minorDB", {
+mongoose.connect("mongodb+srv://approvalAdmin:test123@approvalcluster-euckb.mongodb.net/minorDB", {
   useNewUrlParser: true,
   autoIndex: false,
   useUnifiedTopology: true
