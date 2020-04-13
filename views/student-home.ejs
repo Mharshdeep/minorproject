@@ -1,0 +1,47 @@
+<%- include("partials/student-header") -%>
+
+<% if(count=="1"){%>
+  <h1 class="title-head">Your Project</h1>
+  <div class="title-div">
+    <h2 class="title-title"><%- title -%><a href="/show-form" style="float: right" class="title-viewmore">View details</a></h2>
+</div>
+<br><br>
+<h1 style="text-align: center">Project Weekly updates</h1>
+<br>
+<% updates.forEach(function(update) { %>
+<% if(update.length > 100){ %>
+  <div class="title-div-2-1">
+  <p class="updatepara" ><%- update-%></p>
+  </div>
+<% }else {%>
+<div class="title-div-2">
+<p class="updatepara" ><%- update-%></p>
+</div>
+<% }}); %>
+
+<br>
+<div class="">
+<form class="" action="/submit-update" method="post">
+
+<h2 style="display: flex">New update: </h2>
+<br>
+<textarea style="display: flex" name="newupdate" rows="2" cols="20"></textarea>
+<br>
+<button type="submit" style="display: flex;margin-bottom: 1em" type="submit" class="btn btn-primary" name="button">Submit</button>
+</form>
+</div>
+<%}else{%>
+<div class="center-div">
+  <div class="add-project">
+    <form class="" action="/fill-form" method="post">
+  <button  type="submit" class="btn btn-info btn-lg">
+<span class="glyphicon glyphicon-plus"></span><br> Add Your Project
+</button>
+</form>
+</div>
+  </div>
+<%}%>
+
+</div>
+</body>
+</html>

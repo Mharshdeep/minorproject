@@ -1,0 +1,143 @@
+<%- include("partials/student-header") -%>
+
+<form class=project-form action="/student-home" method="post">
+	<br><br><br>
+
+	<h2 class="fhead" > PROJECT INITIATION FORM </h2><br>
+	<div class='form-group g'>
+		<h3 class='ghead'>Group information</h3><br>
+		<div class='form-row'>
+			<div class='col-sm-6'>
+				<input type="text" class="form-control" id="gname" name="gname" placeholder = "Group name" value="hello" ><br>
+				<input type="text" class="form-control" id="gleader" name="gleader" placeholder = "Group leader">
+			</div>
+			<div class='col-sm-6'>
+				<input type="text" class="form-control" id="ptitle" name="ptitle" placeholder = "Project title"><br>
+				<input type="text" class="form-control" id="gguide" name="gguide" placeholder = "Group Guide">
+			</div>
+		</div>
+	</div>
+
+	<br><br><hr><br><br>
+
+	<div class='form-group g'>
+		<h3 class="ghead">Member Information</h3><br>
+		<div class='form-row'>
+			<div class='col-sm-6'>
+				<label for="mem1">Member 1:</label>
+				<div name='mem1'>
+					<input type="text" class="form-control" id="m1" name="m1" placeholder = "Member1 name"><br>
+					<input type="text" class="form-control" id="eno1" name="eno1" placeholder = "Member1 EnrollmentNo"><br><br>
+				</div>
+				<label for="mem1">Member 3:</label>
+				<div name='mem2'>
+					<input type="text" class="form-control" id="m3" name="m3" placeholder = "Member3 name"><br>
+					<input type="text" class="form-control" id="eno3" name="eno3" placeholder = "Member3 EnrollmentNo">
+				</div>
+			</div>
+			<div class='col-sm-6'>
+				<label for="mem1">Member 2:</label>
+				<div name='mem3'>
+					<input type="text" class="form-control" id="m2" name="m2" placeholder = "Member2 name"><br>
+					<input type="text" class="form-control" id="eno2" name="eno2" placeholder = "Member2 EnrollmentNo"><br><br>
+				</div>
+				<label for="mem1">Member 4:</label>
+				<div name='mem4'>
+					<input type="text" class="form-control" id="m4" name="m4" placeholder = "Member4 name"><br>
+					<input type="text" class="form-control" id="eno4" name="eno4" placeholder = "Member4 EnrollmentNo">
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><hr><br><br>
+
+	<div class='form-group g'>
+		<h3 class='ghead'>Which Parameters Project Is Based On (mark tick) </h3><br>
+		<div class="form-check">
+			<div class='form-row cbr'>
+				<div class="col-sm-6 cbc">
+					<input class="form-check-input" type="checkbox"  id="cb1p1" name="cb1p1" value="">
+					<label for="cb1p1" class="form-check-label"> Current Trends and Recent Advancement </label><br>
+
+					<input type="checkbox" class="form-check-input" id="cb1p2" name="cb1p2" value="">
+					<label for="cb1p2" class="form-check-label"> Society Needs and Solution to the Current Problem </label><br>
+
+					<input type="checkbox" class="form-check-input" id="cb1p3" name="cb1p3" value="">
+					<label for="cb1p3" class="form-check-label"> Improvement Over Any Existing Service </label>
+				</div>
+				<div class="col-sm-6 cbc">
+					<input type="checkbox" class="form-check-input" id="cb1p4" name="cb1p4" value="">
+					<label for="cb1p4" class="form-check-label"> New Idea or Innovation </label><br>
+
+					<input type="checkbox" class="form-check-input" id="cb1p5" name="cb1p5" value="">
+					<label for="cb1p5" class="form-check-label"> Product Development </label><br>
+
+					<input type="checkbox" class="form-check-input" id="cb1p4" name="cb1p4" value="">
+					<label for="cb1p5" class="form-check-label"> Research </label>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><hr><br><br>
+
+	<div class='form-group g'>
+		<h3 class='ghead'>Project Classification Considering Factors (mark tick) </h3><br>
+		<div class='form-check'>
+			<div class='form-row cbr'>
+				<div class='col-sm-6 cbc'>
+					<label for='gshead1'> Classification </label>
+					<div name='gshead1'>
+						<input type="checkbox" class="form-check-input" id="cb2p1" name="cb2p1" value=" a">
+						<label for="cb2p1" class="form-check-label"> Application </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p2" name="cb2p2" value="">
+						<label for="cb2p2" class="form-check-label"> Product </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p3" name="cb2p3" value="">
+						<label for="cb2p3" class="form-check-label"> Research </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p4" name="cb2p4" value="">
+						<label for="cb2p4" class="form-check-label"> Review </label>
+					</div>
+				</div>
+				<div class='col-sm-6 cbc'>
+					<label for='gshead2'> Factors </label>
+					<div name='gshead2'>
+						<input type="checkbox" class="form-check-input" id="cb2p5" name="cb2p5" value="">
+						<label for="cb2p5" class="form-check-label"> Environment/Sustainability </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p6" name="cb2p6" value="">
+						<label for="cb2p6" class="form-check-label"> Health/Safety </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p7" name="cb2p7" value="">
+						<label for="cb2p7" class="form-check-label"> Ethics/Legal </label><br>
+
+						<input type="checkbox" class="form-check-input" id="cb2p8" name="cb2p8" value="">
+						<label for="cb2p8" class="form-check-label"> Societal/Cultural </label>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br><br><hr><br><br>
+
+	<div class='form-group g'>
+		<h3 class="ghead">Project Description</h3><br>
+		<label for="desc">Description: </label><br>
+		<textarea type="text" class="form-control" id="desc" name="desc" placeholder="Write description of project "></textarea>
+	</div>
+
+	<br><br><hr><br><br>
+
+	<input type="submit" class="form-control" value="Submit">
+
+	<br><br><br>
+</form>
+
+
+</div>
+</body>
+</html>

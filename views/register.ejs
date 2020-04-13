@@ -10,13 +10,18 @@
           <!-- Makes POST request to /register route -->
           <form action="/register" method="POST">
             <div class="form-group">
+<label for="name">Name</label>
+<input type="text" name="name" class="form-control" required>
+            </div>
+            <div class="form-group">
               <label for="email">Email</label>
-              <input type="email" class="form-control" name="username">
+              <input type="email" class="form-control" name="username" required>
             </div>
             <div class="form-group">
               <label for="password">Password</label>
-              <input type="password" class="form-control" name="password">
-            </div>
+              <input type="password" class="form-control" name="password" required >
+          <!-- pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 6 or more characters"
+            --></div>
             <button type="submit" class="btn btn-dark">Register</button>
             <a href="/student-login" class="btn login_btn_2">login</a>
           </form>
@@ -25,3 +30,7 @@
       </div>
     </div>
     </div>
+</div>
+</div>
+</body>
+</html>

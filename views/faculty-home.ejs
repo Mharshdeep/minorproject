@@ -1,0 +1,13 @@
+<%- include("partials/student-header") -%>
+
+<h1 align="center">PROJECT</h1>
+
+<% students.forEach(function(student) { %>
+<div class="title-div-2">
+<h2><% student.gname%> <a name="useremail"   href="/show-form" style="float: right" value=<% student.email %>>View More</a></h2>
+</div>
+<% }); %>
+
+</div>
+</body>
+</html>

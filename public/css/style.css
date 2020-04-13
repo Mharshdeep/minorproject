@@ -1,8 +1,6 @@
-body{
-background-image: url(/images/home_background.jpeg);
-background-size: cover;
+.add-project{
+margin: 4em;
 }
-
 .buttons{
   background-color: #4CAF50;
   color: white;
@@ -20,7 +18,28 @@ background-size: cover;
   transform: translateY(0.2em);
 }
 
+.center-div
+{
+  position: absolute;
+  margin: auto;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  background-color: #F5F5EE;
+  border-radius: 3px;
+}
 
+.cbr{
+  width:90%;
+  margin-left:15%;
+}
+
+.dropdown-right{
+  float: right;
+}
 
 .footer{
   background-color: #8CD7DF;
@@ -32,6 +51,11 @@ background-size: cover;
   bottom: 0;
 }
 
+.form-div{
+  margin-top: 4em;
+  width: 580px;
+  background-color: green;
+}
 .front{
   display: inline-block;
 }
@@ -48,6 +72,23 @@ background-size: cover;
   font-family: sans-serif;
   font-weight:bolder;
   font-size: 5em;
+}
+
+.fhead,.gshead{
+  text-align:center;
+  color:rgb(60,60,60);
+}
+.ghead{
+  text-align:center;
+  color:rgb(100,100,100);
+}
+.g{
+  width:80%;
+  margin:auto;
+}
+
+hr{
+  color: grey;
 }
 
 .login{
@@ -85,13 +126,79 @@ background-size: cover;
 .login_btn_2{
   background-color: #CECFC5;
 }
+.main-div{
+background-image: url(/images/home_background.jpeg);
+background-size: cover;
+}
 .navigation{
 background-color: #8CD7DF;
 min-height: 15%;
 padding-top: 15px;
 }
+
+.project-form{
+  width:85%;
+  margin:auto;
+}
 .register{
   text-decoration: underline;
 }
+.student_main_body{
+  background-color:rgb(240,240,240);
+}
+.title-div{
+  border-style: groove;
+  border-radius: 1em;
+  margin-top: 2.5em;
+}
+.title-div-2{
+  border-style: groove;
+  border-radius: 1em;
+  margin-top: 2.5em;
+}
+
+.title-div-2-1{
+  border-style: groove;
+  border-radius: 1em;
+  margin-top: 2.5em;
+  overflow: scroll;
+}
+
+.title-title{
+  padding-left: 1em;
+  padding-bottom: 0.5em;
+}
+.title-viewmore{
+  padding-right: 3em;
+}
+
+.updatepara{
+  padding-left: 1em;
+  font-size: 1.5em;
+}
+
+@media (max-width:500px)  {
+  .title-div{
+    height: 100px;
+  }
+  .title-viewmore{
+font-size: 20px;
+  }
+.title-title{
+  padding-left: none;
+  font-size: 20px;
+}
+
+
+@media (max-width: 1028px) and (min-width: 700px){
+  .title-viewmore{
+    font-size: 3px;
+  }
+  .title-title{
+    font-size: 3px;
+  }
+}}
+
+
 
 /*background-image: linear-gradient(to right, red , yellow);*/

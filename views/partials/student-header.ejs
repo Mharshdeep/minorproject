@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>project manager</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+<nav class="navbar navbar-default navigation">
+      <div class="container navigation_padding">
+        <div class="navbar-header">
+          <a href="/" class="navbar-brand ">Approval</a>
+        </div>
+        <div class="dropdown show navbar-right dropdown-right collapse">
+          <button class="btn btn-secondary dropdown-toggle" type="button" href="#"id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <%- name -%> <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu">
+            <li><a href="/student-home">Home</a></li>
+            <li><a href="/show-form">Profile</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/contact">Contact Us</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="/logout">Logout</a></li>
+          </ul>
+        </div>
+    </nav>
+  </head>
+  <body class="student_main_body">
+    <div class="container">
