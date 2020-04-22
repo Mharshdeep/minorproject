@@ -2,7 +2,12 @@
   padding: 0px;
   margin-left: 1em;
 }
-
+.about-h1{
+  font-style: normal;
+  font-weight: bold;
+  font-size: 3em;
+  padding-top: 4em;
+}
 
 .add-project{
 margin: 4em;
@@ -134,7 +139,7 @@ hr{
 }
 .main-div{
 background-image: url(/images/home_background.jpeg);
-background-size: 100% 180%;
+background-size: cover;
 background-repeat: no-repeat;
 margin: 0px;
 padding: 0px;
@@ -207,7 +212,15 @@ font-size: 20px;
     font-size: 3px;
   }
 }}
-
+@media (max-width: 1000px) {
+  .main-div{
+  background-image: url(/images/home_background.jpeg);
+  background-size: 100% 350%;
+  background-repeat: no-repeat;
+  margin: 0px;
+  padding: 0px;
+  }
+}
 
 
 /*background-image: linear-gradient(to right, red , yellow);*/

@@ -99,11 +99,11 @@ app.get("/", function(req, res) {
 
 
 app.get("/about", function(req, res) {
-  res.send("i am harshdeep")
+  res.render("about");
 });
 
 app.get("/contact", function(req, res) {
-  res.send("8120529979")
+  res.render("contact");
 });
 
 app.get("/faculty-login", function(req, res) {
