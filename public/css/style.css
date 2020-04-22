@@ -1,3 +1,9 @@
+.a-status{
+  padding: 0px;
+  margin-left: 1em;
+}
+
+
 .add-project{
 margin: 4em;
 }
@@ -128,7 +134,10 @@ hr{
 }
 .main-div{
 background-image: url(/images/home_background.jpeg);
-background-size: cover;
+background-size: 100% 180%;
+background-repeat: no-repeat;
+margin: 0px;
+padding: 0px;
 }
 .navigation{
 background-color: #8CD7DF;

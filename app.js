@@ -26,10 +26,15 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+//mongoose.connect("mongodb://localhost:27017/minorDB" , {
+ //useNewUrlParser: true,
+ //autoIndex: false,
+ //useUnifiedTopology: true
+//});
 mongoose.connect("mongodb+srv://approvalAdmin:"+process.env.DBADMIN+"@approvalcluster-euckb.mongodb.net/minorDB", {
-  useNewUrlParser: true,
-  autoIndex: false,
-  useUnifiedTopology: true
+ useNewUrlParser: true,
+ autoIndex: false,
+ useUnifiedTopology: true
 });
 mongoose.set("useCreateIndex", true);
 
@@ -131,7 +136,7 @@ else {
 });
 
 app.post("/fill-form",function(req,res) {
-res.render("project-form",{name: "harshdeep singh",type: "/"+req.user.type+"-home"})
+res.render("project-form",{name: req.user.name,type: "/"+req.user.type+"-home"})
 });
 
 app.get("/show-form",function(req,res) {
@@ -144,7 +149,7 @@ app.get("/show-form",function(req,res) {
       res.render("show-form",{name: req.user.name,ptitle: result.project_title,gname: result.gname,gleader: result.gleader,gguide: "akankksha",
       desc: result.project_description,m1: result.mem1,eno1: result.enr1,m2: result.mem2,eno2: result.enr2,m3: result.mem3,eno3: result.enr3,m4: result.mem4,eno4: result.enr4,updates: result.updates,type: "/"+req.user.type+"-home"});
     }else{
-    console.log("error");
+    res.render("project-form",{name: req.user.name,type:"/"+req.user.type+"-home"});
     }
     });
   }
